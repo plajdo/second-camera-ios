@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		099917CC2A126483006356C9 /* secondCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099917CB2A126483006356C9 /* secondCameraApp.swift */; };
-		099917CE2A126483006356C9 /* secondCameraDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099917CD2A126483006356C9 /* secondCameraDocument.swift */; };
-		099917D02A126483006356C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099917CF2A126483006356C9 /* ContentView.swift */; };
+		099917CC2A126483006356C9 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099917CB2A126483006356C9 /* Application.swift */; };
 		099917D22A126485006356C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099917D12A126485006356C9 /* Assets.xcassets */; };
-		099917D52A126485006356C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099917D42A126485006356C9 /* Preview Assets.xcassets */; };
+		099917DF2A12657A006356C9 /* CameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099917DE2A12657A006356C9 /* CameraScreen.swift */; };
+		099917E22A1265EA006356C9 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099917E12A1265EA006356C9 /* Camera.swift */; };
+		09F5E4DD2A12708000A41AAC /* Glass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4DC2A12708000A41AAC /* Glass.swift */; };
+		09F5E4E02A12850A00A41AAC /* CameraSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4DF2A12850A00A41AAC /* CameraSession.swift */; };
+		09F5E4E32A12A04400A41AAC /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4E22A12A04400A41AAC /* Icon.swift */; };
+		09F5E4E52A12B7F400A41AAC /* LocationsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4E42A12B7F400A41AAC /* LocationsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		099917C82A126483006356C9 /* secondCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = secondCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		099917CB2A126483006356C9 /* secondCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondCameraApp.swift; sourceTree = "<group>"; };
-		099917CD2A126483006356C9 /* secondCameraDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondCameraDocument.swift; sourceTree = "<group>"; };
-		099917CF2A126483006356C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		099917CB2A126483006356C9 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		099917D12A126485006356C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		099917D42A126485006356C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		099917D62A126485006356C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		099917DE2A12657A006356C9 /* CameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScreen.swift; sourceTree = "<group>"; };
+		099917E12A1265EA006356C9 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		09F5E4DC2A12708000A41AAC /* Glass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glass.swift; sourceTree = "<group>"; };
+		09F5E4DF2A12850A00A41AAC /* CameraSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSession.swift; sourceTree = "<group>"; };
+		09F5E4E22A12A04400A41AAC /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		09F5E4E42A12B7F400A41AAC /* LocationsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,22 +60,41 @@
 		099917CA2A126483006356C9 /* secondCamera */ = {
 			isa = PBXGroup;
 			children = (
-				099917CB2A126483006356C9 /* secondCameraApp.swift */,
-				099917CD2A126483006356C9 /* secondCameraDocument.swift */,
-				099917CF2A126483006356C9 /* ContentView.swift */,
+				099917CB2A126483006356C9 /* Application.swift */,
 				099917D12A126485006356C9 /* Assets.xcassets */,
 				099917D62A126485006356C9 /* Info.plist */,
-				099917D32A126485006356C9 /* Preview Content */,
+				09F5E4DE2A1284FD00A41AAC /* Camera */,
+				099917DC2A126557006356C9 /* Screens */,
+				099917E02A1265DB006356C9 /* Views */,
 			);
 			path = secondCamera;
 			sourceTree = "<group>";
 		};
-		099917D32A126485006356C9 /* Preview Content */ = {
+		099917DC2A126557006356C9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				099917D42A126485006356C9 /* Preview Assets.xcassets */,
+				099917DE2A12657A006356C9 /* CameraScreen.swift */,
+				09F5E4E42A12B7F400A41AAC /* LocationsScreen.swift */,
 			);
-			path = "Preview Content";
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		099917E02A1265DB006356C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09F5E4E22A12A04400A41AAC /* Icon.swift */,
+				099917E12A1265EA006356C9 /* Camera.swift */,
+				09F5E4DC2A12708000A41AAC /* Glass.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		09F5E4DE2A1284FD00A41AAC /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				09F5E4DF2A12850A00A41AAC /* CameraSession.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +155,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				099917D52A126485006356C9 /* Preview Assets.xcassets in Resources */,
 				099917D22A126485006356C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,9 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				099917CC2A126483006356C9 /* secondCameraApp.swift in Sources */,
-				099917CE2A126483006356C9 /* secondCameraDocument.swift in Sources */,
-				099917D02A126483006356C9 /* ContentView.swift in Sources */,
+				09F5E4E02A12850A00A41AAC /* CameraSession.swift in Sources */,
+				09F5E4E52A12B7F400A41AAC /* LocationsScreen.swift in Sources */,
+				09F5E4DD2A12708000A41AAC /* Glass.swift in Sources */,
+				099917DF2A12657A006356C9 /* CameraScreen.swift in Sources */,
+				099917CC2A126483006356C9 /* Application.swift in Sources */,
+				099917E22A1265EA006356C9 /* Camera.swift in Sources */,
+				09F5E4E32A12A04400A41AAC /* Icon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,28 +298,37 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"secondCamera/Preview Content\"";
+				DEVELOPMENT_TEAM = UXJD8DJ3JM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = secondCamera/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = altcam;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses camera to be able to take photos.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses microphone to be able to record audio together with video.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goodrequest.secondCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = sk.bytecode.secondCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -300,28 +337,37 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"secondCamera/Preview Content\"";
+				DEVELOPMENT_TEAM = UXJD8DJ3JM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = secondCamera/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = altcam;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses camera to be able to take photos.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses microphone to be able to record audio together with video.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goodrequest.secondCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = sk.bytecode.secondCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

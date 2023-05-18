@@ -28,6 +28,7 @@ enum IconImage: String {
     case switchCamera = "arrow.triangle.2.circlepath.camera"
     case photoStack = "photo.stack.fill"
     case album = "person.2.crop.square.stack.fill"
+    case plus = "plus.app"
 
 }
 

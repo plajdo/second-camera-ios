@@ -15,6 +15,14 @@
 		09F5E4E02A12850A00A41AAC /* CameraSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4DF2A12850A00A41AAC /* CameraSession.swift */; };
 		09F5E4E32A12A04400A41AAC /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4E22A12A04400A41AAC /* Icon.swift */; };
 		09F5E4E52A12B7F400A41AAC /* LocationsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4E42A12B7F400A41AAC /* LocationsScreen.swift */; };
+		09F5E4E82A16174900A41AAC /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4E72A16174900A41AAC /* CacheManager.swift */; };
+		09F5E4EB2A16188C00A41AAC /* GoodPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = 09F5E4EA2A16188C00A41AAC /* GoodPersistence */; };
+		09F5E4EE2A161C5C00A41AAC /* SharedObject in Frameworks */ = {isa = PBXBuildFile; productRef = 09F5E4ED2A161C5C00A41AAC /* SharedObject */; };
+		09F5E4F02A161C9700A41AAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4EF2A161C9700A41AAC /* Constants.swift */; };
+		09F5E4F22A161CDE00A41AAC /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4F12A161CDE00A41AAC /* DependencyContainer.swift */; };
+		09F5E4F42A1624DE00A41AAC /* CreateLocationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4F32A1624DE00A41AAC /* CreateLocationScreen.swift */; };
+		09F5E4F62A16263E00A41AAC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4F52A16263E00A41AAC /* Location.swift */; };
+		09F5E4F82A16300000A41AAC /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4F72A16300000A41AAC /* OptionalExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,12 @@
 		09F5E4DF2A12850A00A41AAC /* CameraSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSession.swift; sourceTree = "<group>"; };
 		09F5E4E22A12A04400A41AAC /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		09F5E4E42A12B7F400A41AAC /* LocationsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsScreen.swift; sourceTree = "<group>"; };
+		09F5E4E72A16174900A41AAC /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		09F5E4EF2A161C9700A41AAC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		09F5E4F12A161CDE00A41AAC /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		09F5E4F32A1624DE00A41AAC /* CreateLocationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLocationScreen.swift; sourceTree = "<group>"; };
+		09F5E4F52A16263E00A41AAC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		09F5E4F72A16300000A41AAC /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F5E4EE2A161C5C00A41AAC /* SharedObject in Frameworks */,
+				09F5E4EB2A16188C00A41AAC /* GoodPersistence in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +79,7 @@
 				099917CB2A126483006356C9 /* Application.swift */,
 				099917D12A126485006356C9 /* Assets.xcassets */,
 				099917D62A126485006356C9 /* Info.plist */,
+				09F5E4E62A16172700A41AAC /* Helpers */,
 				09F5E4DE2A1284FD00A41AAC /* Camera */,
 				099917DC2A126557006356C9 /* Screens */,
 				099917E02A1265DB006356C9 /* Views */,
@@ -75,6 +92,7 @@
 			children = (
 				099917DE2A12657A006356C9 /* CameraScreen.swift */,
 				09F5E4E42A12B7F400A41AAC /* LocationsScreen.swift */,
+				09F5E4F32A1624DE00A41AAC /* CreateLocationScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -85,6 +103,7 @@
 				09F5E4E22A12A04400A41AAC /* Icon.swift */,
 				099917E12A1265EA006356C9 /* Camera.swift */,
 				09F5E4DC2A12708000A41AAC /* Glass.swift */,
+				09F5E4F52A16263E00A41AAC /* Location.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,6 +114,17 @@
 				09F5E4DF2A12850A00A41AAC /* CameraSession.swift */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		09F5E4E62A16172700A41AAC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				09F5E4E72A16174900A41AAC /* CacheManager.swift */,
+				09F5E4EF2A161C9700A41AAC /* Constants.swift */,
+				09F5E4F12A161CDE00A41AAC /* DependencyContainer.swift */,
+				09F5E4F72A16300000A41AAC /* OptionalExtension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +143,10 @@
 			dependencies = (
 			);
 			name = secondCamera;
+			packageProductDependencies = (
+				09F5E4EA2A16188C00A41AAC /* GoodPersistence */,
+				09F5E4ED2A161C5C00A41AAC /* SharedObject */,
+			);
 			productName = secondCamera;
 			productReference = 099917C82A126483006356C9 /* secondCamera.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +175,10 @@
 				Base,
 			);
 			mainGroup = 099917BF2A126483006356C9;
+			packageReferences = (
+				09F5E4E92A16188C00A41AAC /* XCRemoteSwiftPackageReference "GoodPersistence" */,
+				09F5E4EC2A161C5C00A41AAC /* XCRemoteSwiftPackageReference "swiftui-shared-object" */,
+			);
 			productRefGroup = 099917C92A126483006356C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,12 +205,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				09F5E4E02A12850A00A41AAC /* CameraSession.swift in Sources */,
+				09F5E4F82A16300000A41AAC /* OptionalExtension.swift in Sources */,
 				09F5E4E52A12B7F400A41AAC /* LocationsScreen.swift in Sources */,
 				09F5E4DD2A12708000A41AAC /* Glass.swift in Sources */,
 				099917DF2A12657A006356C9 /* CameraScreen.swift in Sources */,
+				09F5E4E82A16174900A41AAC /* CacheManager.swift in Sources */,
 				099917CC2A126483006356C9 /* Application.swift in Sources */,
+				09F5E4F42A1624DE00A41AAC /* CreateLocationScreen.swift in Sources */,
+				09F5E4F22A161CDE00A41AAC /* DependencyContainer.swift in Sources */,
 				099917E22A1265EA006356C9 /* Camera.swift in Sources */,
 				09F5E4E32A12A04400A41AAC /* Icon.swift in Sources */,
+				09F5E4F62A16263E00A41AAC /* Location.swift in Sources */,
+				09F5E4F02A161C9700A41AAC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +437,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		09F5E4E92A16188C00A41AAC /* XCRemoteSwiftPackageReference "GoodPersistence" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GoodRequest/GoodPersistence";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		09F5E4EC2A161C5C00A41AAC /* XCRemoteSwiftPackageReference "swiftui-shared-object" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-shared-object.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		09F5E4EA2A16188C00A41AAC /* GoodPersistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09F5E4E92A16188C00A41AAC /* XCRemoteSwiftPackageReference "GoodPersistence" */;
+			productName = GoodPersistence;
+		};
+		09F5E4ED2A161C5C00A41AAC /* SharedObject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09F5E4EC2A161C5C00A41AAC /* XCRemoteSwiftPackageReference "swiftui-shared-object" */;
+			productName = SharedObject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 099917C02A126483006356C9 /* Project object */;
 }

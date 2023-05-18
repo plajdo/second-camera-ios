@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import SharedObject
 
 @main
 struct Application: App {
+
+    @SharedObject(C.dependencyContainer) var di = DependencyContainer()
 
     var body: some Scene {
         WindowGroup {

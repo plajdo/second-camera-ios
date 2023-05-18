@@ -40,6 +40,20 @@ actor PhotoManager {
         try await addPhoto(album: album, photo: photo)
     }
 
+    func getAllPhotos(at location: Location) {
+        let albumFetchOptions = PHFetchOptions()
+        albumFetchOptions.predicate = NSPredicate(format: "title = %@", location.name)
+
+        let albums = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: albumFetchOptions)
+        albums.enumerateObjects { object, index, stop in
+            let photos = PHAsset.fetchAssets(in: object, options: nil)
+
+            photos.enumerateObjects { object, index, stop in
+                
+            }
+        }
+    }
+
 }
 
 private extension PhotoManager {

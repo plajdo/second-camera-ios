@@ -5,23 +5,7 @@
 //  Created by Filip Šašala on 15/05/2023.
 //
 
-import Combine
 import SwiftUI
-import SharedObject
-
-final class LocationsViewModel: ObservableObject {
-
-    @SharedObject(C.dependencyContainer) var di: DependencyContainer
-    
-    @Published var locations: [Location] = [] {
-        didSet { di.cacheManager.update(locations: locations) }
-    }
-
-    init() {
-        self.locations = di.cacheManager.savedLocations
-    }
-
-}
 
 struct LocationsScreen: View {
 

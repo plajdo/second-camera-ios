@@ -19,11 +19,11 @@ struct CreateLocationScreen: View {
         Form {
             Section("Typ lokácie") {
                 Picker("Ukladať fotografie do:", selection: $newLocation.type) {
-                    Text("Album")
-                        .tag(LocationType.album)
-
                     Text("Priečinok")
                         .tag(LocationType.folder)
+                    
+                    Text("Album")
+                        .tag(LocationType.album)
                 }
             }
             Section("Názov") {

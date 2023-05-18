@@ -25,7 +25,7 @@ struct Location: Codable, Hashable, Identifiable {
     init() {
         self.id = UUID().uuidString
         self.name = ""
-        self.type = .album
+        self.type = .folder
     }
 
 }

@@ -18,14 +18,26 @@ final class GalleryViewModel: ObservableObject {
 
     @SharedObject(C.dependencyContainer) var di: DependencyContainer
     @Published var images: [URL]
+    @Published var redirected: Bool = false
 
     var fileManager: FileManager { di.fileManager }
 
     init(gallery: Gallery) {
         self.images = []
 
-        let urls = try? fileManager.getAllFiles(at: gallery.location)
-        self.images = urls ?? []
+        switch gallery.location.type {
+        case .album:
+            UIApplication.shared.open(URL(string: "photos-redirect://\(gallery.location.name)")!)
+            redirected = true
+
+        case .folder:
+            let urls = try? fileManager.getAllFiles(at: gallery.location)
+            self.images = urls ?? []
+        }
+    }
+
+    init(images: [URL]) {
+        self.images = images
     }
 
 }
@@ -37,6 +49,14 @@ struct GalleryScreen: View {
     @State private var presentedImage: URL?
 
     var body: some View {
+        if viewModel.redirected {
+            Text("Presmerované do galérie")
+        } else {
+            mainContent
+        }
+    }
+
+    private var mainContent: some View {
         ScrollView {
             LazyVGrid(
                 columns: [GridItem(spacing: 4), GridItem(spacing: 4), GridItem(spacing: 4)],
@@ -62,13 +82,14 @@ struct GalleryScreen: View {
             presentedImage = url
         }, label: {
             AsyncImage(url: url, content: {
-                $0.resizable().aspectRatio(contentMode: .fill)
+                $0.resizable().scaledToFill()
             }, placeholder: {
                 Icon(.photo)
                     .foregroundColor(.accentColor)
                     .padding(32)
             })
         })
+        .clipped()
     }
 
 }
@@ -95,7 +116,13 @@ struct GalleryDetail: UIViewControllerRepresentable {
 struct GalleryScreen_Previews: PreviewProvider {
 
     static var previews: some View {
-        GalleryScreen(viewModel: GalleryViewModel(gallery: Gallery(location: Location())))
+        GalleryScreen(viewModel: GalleryViewModel(images: [
+            URL(string: "https://picsum.photos/id/237/200/300")!,
+            URL(string: "https://picsum.photos/id/238/200/300")!,
+            URL(string: "https://picsum.photos/id/239/200/300")!,
+            URL(string: "https://picsum.photos/id/240/200/300")!,
+            URL(string: "https://picsum.photos/id/241/200/300")!
+        ]))
     }
 
 }

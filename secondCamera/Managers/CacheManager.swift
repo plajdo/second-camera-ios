@@ -16,12 +16,8 @@ final class CacheManager {
 
 extension CacheManager {
 
-    func saveLocation(_ location: Location) {
-        savedLocations.append(location)
-    }
-
-    func removeLocation(_ location: Location) {
-        savedLocations.removeAll { location == $0 }
+    func update(locations: [Location]) {
+        savedLocations = locations
     }
 
 }

@@ -5,22 +5,45 @@
 //  Created by Filip Šašala on 15/05/2023.
 //
 
+import AVFoundation
 import SwiftUI
+import SharedObject
+
+final class CameraViewModel: ObservableObject {
+
+    @SharedObject(C.dependencyContainer) private var di: DependencyContainer
+
+    private var photoManager: PhotoManager { di.photoManager }
+    private var fileManager: FileManager { di.fileManager }
+
+    var location: Location
+
+    init(location: Location) {
+        self.location = location
+    }
+
+    func savePhoto(_ photo: AVCapturePhoto) {
+        switch location.type {
+        case .album:
+            Task { try? await photoManager.addPhoto(photo, location: location) }
+
+        case .folder:
+            guard let data = photo.fileDataRepresentation() else { return }
+            try? fileManager.saveData(data, to: location)
+        }
+    }
+
+}
 
 struct CameraScreen: View {
 
+    @ObservedObject var viewModel: CameraViewModel
     @StateObject private var cameraSession = CameraSession()
-    @State private var capturedImage: CGImage?
 
     var body: some View {
         ZStack {
             Camera(session: cameraSession)
                 .ignoresSafeArea(.all)
-
-            if let capturedImage {
-                Image(uiImage: UIImage(cgImage: capturedImage, scale: 1, orientation: .right))
-                    .resizable()
-            }
 
             VStack {
                 Spacer()
@@ -37,20 +60,18 @@ struct CameraScreen: View {
                 .frame(height: 140)
 
             HStack {
-                Button(action: {
-                    print("open gallery")
-                }, label: {
+                NavigationLink(value: Gallery(location: viewModel.location), label: {
                     Icon(.photoStack)
                         .foregroundColor(.white)
                         .frame(width: 40, height: 40)
                         .padding(32)
+                        .shadow(radius: 2)
                 })
-                .shadow(radius: 2)
 
                 Button(action: {
                     Task {
                         let photo = try! await cameraSession.takePhoto()
-                        self.capturedImage = photo.cgImageRepresentation()
+                        viewModel.savePhoto(photo)
                     }
                 }, label: {
                     Circle()
@@ -79,11 +100,11 @@ struct CameraScreen: View {
 struct LocationPickerScreen_Previews: PreviewProvider {
 
     static var previews: some View {
-        CameraScreen()
+        CameraScreen(viewModel: CameraViewModel(location: Location()))
             .previewInterfaceOrientation(.portrait)
             .previewDisplayName("Portrait")
 
-        CameraScreen()
+        CameraScreen(viewModel: CameraViewModel(location: Location()))
             .previewInterfaceOrientation(.landscapeRight)
             .previewDisplayName("Landscape")
     }

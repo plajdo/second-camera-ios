@@ -23,6 +23,11 @@
 		09F5E4F42A1624DE00A41AAC /* CreateLocationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4F32A1624DE00A41AAC /* CreateLocationScreen.swift */; };
 		09F5E4F62A16263E00A41AAC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4F52A16263E00A41AAC /* Location.swift */; };
 		09F5E4F82A16300000A41AAC /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E4F72A16300000A41AAC /* OptionalExtension.swift */; };
+		09F5E54C2A16980C00A41AAC /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E54B2A16980C00A41AAC /* PhotoManager.swift */; };
+		09F5E54E2A16AB1F00A41AAC /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E54D2A16AB1F00A41AAC /* FileManager.swift */; };
+		09F5E5502A16B37B00A41AAC /* GalleryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E54F2A16B37B00A41AAC /* GalleryScreen.swift */; };
+		09F5E5542A16B84B00A41AAC /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E5532A16B84B00A41AAC /* GalleryDetailViewController.swift */; };
+		09F5E5562A16C8EC00A41AAC /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E5552A16C8EC00A41AAC /* Gallery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		09F5E4F32A1624DE00A41AAC /* CreateLocationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLocationScreen.swift; sourceTree = "<group>"; };
 		09F5E4F52A16263E00A41AAC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		09F5E4F72A16300000A41AAC /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
+		09F5E54B2A16980C00A41AAC /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
+		09F5E54D2A16AB1F00A41AAC /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		09F5E54F2A16B37B00A41AAC /* GalleryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryScreen.swift; sourceTree = "<group>"; };
+		09F5E5532A16B84B00A41AAC /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
+		09F5E5552A16C8EC00A41AAC /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,7 @@
 				099917CB2A126483006356C9 /* Application.swift */,
 				099917D12A126485006356C9 /* Assets.xcassets */,
 				099917D62A126485006356C9 /* Info.plist */,
+				09F5E54A2A1697FF00A41AAC /* Managers */,
 				09F5E4E62A16172700A41AAC /* Helpers */,
 				09F5E4DE2A1284FD00A41AAC /* Camera */,
 				099917DC2A126557006356C9 /* Screens */,
@@ -90,6 +101,7 @@
 		099917DC2A126557006356C9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				09F5E5512A16B83A00A41AAC /* Gallery */,
 				099917DE2A12657A006356C9 /* CameraScreen.swift */,
 				09F5E4E42A12B7F400A41AAC /* LocationsScreen.swift */,
 				09F5E4F32A1624DE00A41AAC /* CreateLocationScreen.swift */,
@@ -104,6 +116,7 @@
 				099917E12A1265EA006356C9 /* Camera.swift */,
 				09F5E4DC2A12708000A41AAC /* Glass.swift */,
 				09F5E4F52A16263E00A41AAC /* Location.swift */,
+				09F5E5552A16C8EC00A41AAC /* Gallery.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,12 +132,30 @@
 		09F5E4E62A16172700A41AAC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				09F5E4E72A16174900A41AAC /* CacheManager.swift */,
 				09F5E4EF2A161C9700A41AAC /* Constants.swift */,
 				09F5E4F12A161CDE00A41AAC /* DependencyContainer.swift */,
 				09F5E4F72A16300000A41AAC /* OptionalExtension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		09F5E54A2A1697FF00A41AAC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				09F5E4E72A16174900A41AAC /* CacheManager.swift */,
+				09F5E54B2A16980C00A41AAC /* PhotoManager.swift */,
+				09F5E54D2A16AB1F00A41AAC /* FileManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		09F5E5512A16B83A00A41AAC /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				09F5E54F2A16B37B00A41AAC /* GalleryScreen.swift */,
+				09F5E5532A16B84B00A41AAC /* GalleryDetailViewController.swift */,
+			);
+			path = Gallery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,18 +235,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F5E54E2A16AB1F00A41AAC /* FileManager.swift in Sources */,
 				09F5E4E02A12850A00A41AAC /* CameraSession.swift in Sources */,
 				09F5E4F82A16300000A41AAC /* OptionalExtension.swift in Sources */,
+				09F5E54C2A16980C00A41AAC /* PhotoManager.swift in Sources */,
 				09F5E4E52A12B7F400A41AAC /* LocationsScreen.swift in Sources */,
 				09F5E4DD2A12708000A41AAC /* Glass.swift in Sources */,
 				099917DF2A12657A006356C9 /* CameraScreen.swift in Sources */,
 				09F5E4E82A16174900A41AAC /* CacheManager.swift in Sources */,
 				099917CC2A126483006356C9 /* Application.swift in Sources */,
 				09F5E4F42A1624DE00A41AAC /* CreateLocationScreen.swift in Sources */,
+				09F5E5562A16C8EC00A41AAC /* Gallery.swift in Sources */,
 				09F5E4F22A161CDE00A41AAC /* DependencyContainer.swift in Sources */,
 				099917E22A1265EA006356C9 /* Camera.swift in Sources */,
 				09F5E4E32A12A04400A41AAC /* Icon.swift in Sources */,
 				09F5E4F62A16263E00A41AAC /* Location.swift in Sources */,
+				09F5E5542A16B84B00A41AAC /* GalleryDetailViewController.swift in Sources */,
+				09F5E5502A16B37B00A41AAC /* GalleryScreen.swift in Sources */,
 				09F5E4F02A161C9700A41AAC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +389,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses camera to be able to take photos.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses microphone to be able to record audio together with video.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs to access photo library to save photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs to access photo library to create albums.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -392,6 +430,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses camera to be able to take photos.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses microphone to be able to record audio together with video.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs to access photo library to save photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs to access photo library to create albums.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

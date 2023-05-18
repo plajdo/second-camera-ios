@@ -7,6 +7,14 @@
 
 import Foundation
 
+enum LocationError: Error {
+
+    case invalidType
+    case invalidFolder
+    case missingAlbum
+
+}
+
 struct Location: Codable, Hashable, Identifiable {
 
     var id: String
@@ -22,9 +30,37 @@ struct Location: Codable, Hashable, Identifiable {
 
 }
 
+extension Location {
+
+    func path() {
+        
+    }
+
+}
+
 enum LocationType: String, Codable, Hashable {
 
     case album
     case folder
+
+    var localizedName: String {
+        switch self {
+        case .album:
+            return "Album"
+
+        case .folder:
+            return "Priečinok"
+        }
+    }
+
+    var icon: Icon {
+        switch self {
+        case .album:
+            return Icon(.album)
+
+        case .folder:
+            return Icon(.folder)
+        }
+    }
 
 }

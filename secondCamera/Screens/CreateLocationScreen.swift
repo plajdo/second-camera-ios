@@ -8,20 +8,12 @@
 import SwiftUI
 import SharedObject
 
-final class CreateLocationModel: ObservableObject {
-
-    @SharedObject(C.dependencyContainer) var di: DependencyContainer
-
-    func saveLocation(_ location: Location) {
-        di.cacheManager.saveLocation(location)
-    }
-
-}
-
 struct CreateLocationScreen: View {
 
-    @StateObject private var viewModel = CreateLocationModel()
-    @Binding var newLocation: Location
+    @EnvironmentObject var viewModel: LocationsViewModel
+
+    @State private var newLocation: Location = Location()
+    @Binding var creatingLocation: Bool
 
     var body: some View {
         Form {
@@ -39,7 +31,8 @@ struct CreateLocationScreen: View {
             }
 
             Button(action: {
-
+                viewModel.locations.append(newLocation)
+                creatingLocation = false
             }, label: {
                 Text("Pridať novú lokáciu")
             })
@@ -54,7 +47,7 @@ struct CreateLocationScreen_Previews: PreviewProvider {
 
     static var previews: some View {
         NavigationStack {
-            CreateLocationScreen(newLocation: .constant(Location()))
+            CreateLocationScreen(creatingLocation: .constant(true))
         }
     }
 

@@ -17,8 +17,11 @@ struct Application: App {
         WindowGroup {
             NavigationStack {
                 LocationsScreen()
-                    .navigationDestination(for: String.self, destination: { location in
-                        CameraScreen()
+                    .navigationDestination(for: Location.self, destination: { location in
+                        CameraScreen(viewModel: CameraViewModel(location: location))
+                    })
+                    .navigationDestination(for: Gallery.self, destination: { gallery in
+                        GalleryScreen(viewModel: GalleryViewModel(gallery: gallery))
                     })
             }
         }

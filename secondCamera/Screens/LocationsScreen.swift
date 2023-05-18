@@ -9,67 +9,76 @@ import Combine
 import SwiftUI
 import SharedObject
 
-final class LocationsModel: ObservableObject {
+final class LocationsViewModel: ObservableObject {
 
     @SharedObject(C.dependencyContainer) var di: DependencyContainer
-
-    private var cancellables = Set<AnyCancellable>()
-
-    init() {
-        di.cacheManager.savedLocations.publisher
-            .map { _ in () }
-            .sink { [weak self] in
-                guard let self else { return }
-                objectWillChange.send()
-            }
-            .store(in: &cancellables)
+    
+    @Published var locations: [Location] = [] {
+        didSet { di.cacheManager.update(locations: locations) }
     }
 
-    var locations: [Location] {
-        di.cacheManager.savedLocations
+    init() {
+        self.locations = di.cacheManager.savedLocations
     }
 
 }
 
 struct LocationsScreen: View {
 
-    @StateObject private var viewModel = LocationsModel()
-    @State private var newLocation: Location? = nil
+    @StateObject private var viewModel = LocationsViewModel()
+    @State private var creatingLocation: Bool = false
 
     var body: some View {
         List {
             ForEach(viewModel.locations) { location in
-                NavigationLink(value: location.id, label: {
+                NavigationLink(value: location, label: {
                     locationView(for: location)
                 })
             }
         }
-        .toolbar {
-            Button(action: {
-                newLocation = Location()
-            }, label: {
-                Icon(.plus)
-            })
-        }
+        .toolbar(content: setupToolbar)
         .navigationTitle("Lokácie")
-        .sheet(isPresented: $newLocation.isNotNil, content: {
-            NavigationStack { CreateLocationScreen(newLocation: $newLocation) }
+        .sheet(isPresented: $creatingLocation, content: {
+            NavigationStack { CreateLocationScreen(
+                creatingLocation: $creatingLocation
+            ) }
+            .environmentObject(viewModel)
+        })
+    }
+
+    func setupToolbar() -> some View {
+        Button(action: {
+            creatingLocation = true
+        }, label: {
+            Icon(.plus)
         })
     }
 
     func locationView(for location: Location) -> some View {
         HStack {
-            Icon(.album)
+            location.type.icon
                 .foregroundColor(Color.accentColor)
                 .frame(width: 24, height: 24)
                 .padding()
 
             VStack(alignment: .leading, spacing: 8) {
-                Text(location.type.rawValue)
-                Text(location.type.rawValue)
+                Text(location.name)
+                Text(location.type.localizedName)
                     .font(.subheadline)
             }
         }
+        .swipeActions(content: { trashCanSwipeAction(for: location) })
+    }
+
+    func trashCanSwipeAction(for location: Location) -> some View {
+        Button(action: {
+            viewModel.locations.remove(
+                at: viewModel.locations.firstIndex(of: location) ?? 0
+            )
+        }, label: {
+            Icon(.trash)
+        })
+        .tint(.red)
     }
 
 }

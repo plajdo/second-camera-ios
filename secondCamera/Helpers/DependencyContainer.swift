@@ -13,8 +13,25 @@ protocol WithCacheManager {
 
 }
 
-final class DependencyContainer: ObservableObject, WithCacheManager {
+protocol WithPhotoManager {
+
+    var photoManager: PhotoManager { get }
+
+}
+
+protocol WithFileManager {
+
+    var fileManager: FileManager { get }
+
+}
+
+final class DependencyContainer: ObservableObject,
+                                 WithCacheManager,
+                                 WithPhotoManager,
+                                 WithFileManager {
 
     var cacheManager: CacheManager = .init()
+    var photoManager: PhotoManager = .init()
+    var fileManager: FileManager = .init()
 
 }
